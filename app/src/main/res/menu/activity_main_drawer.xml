@@ -2,22 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_Top_film" android:icon="@android:drawable/btn_star_big_on"
+        <item android:id="@+id/nav_Top_film" android:icon="@drawable/top"
             android:title="Top films" />
-        <item android:id="@+id/nav_gallery" android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item android:id="@+id/nav_slideshow" android:icon="@android:drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item android:id="@+id/nav_manage" android:icon="@android:drawable/ic_menu_manage"
-            android:title="Tools" />
+        <item android:id="@+id/nav_Search" android:icon="@drawable/search"
+            android:title="Search" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Catégories">
         <menu>
-            <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_share"
-                android:title="Share" />
-            <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
-                android:title="Send" />
+            <group android:checkableBehavior="single">
+            <item android:id="@+id/nav_Films" android:icon="@drawable/movie"
+                android:title="Films" />
+            <item android:id="@+id/nav_Series" android:icon="@drawable/serie"
+                android:title="Séries" />
+            <item android:id="@+id/nav_Musique" android:icon="@drawable/musique"
+                android:title="Musiques" />
+            <item android:id="@+id/nav_logiciels" android:icon="@drawable/logiciel"
+                android:title="Logiciels" />
+            <item android:id="@+id/nav_Ebooks" android:icon="@drawable/ebook"
+                android:title="Ebooks" />
+            <item android:id="@+id/nav_Jeux_console" android:icon="@drawable/jeuxconsole"
+                android:title="Jeux Consoles" />
+            <item android:id="@+id/nav_Jeux_Pc" android:icon="@drawable/jeuxpc"
+                android:title="Jeux PC" />
+            </group>
         </menu>
     </item>
 
