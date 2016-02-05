@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity
             final ActionBar action = getSupportActionBar(); //get the actionbar
             action.setDisplayShowCustomEnabled(false); //disable a custom view inside the actionbar
             action.setDisplayShowTitleEnabled(true);
-            action.setTitle(toolbar.getTitle());
+            //action.setTitle(toolbar.getTitle());
 
 
 
@@ -280,7 +280,7 @@ public class MainActivity extends AppCompatActivity
                         currentfrag.search(v.getText().toString());
                         action.setDisplayShowCustomEnabled(false); //disable a custom view inside the actionbar
                         action.setDisplayShowTitleEnabled(true);
-                        action.setTitle(toolbar.getTitle());//show the title in the action bar
+                        action.setTitle(v.getText().toString());//show the title in the action bar
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(edtSeach.getWindowToken(), 0);
                         return true;
