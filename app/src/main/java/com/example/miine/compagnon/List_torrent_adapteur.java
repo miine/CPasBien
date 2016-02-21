@@ -1,6 +1,7 @@
 package com.example.miine.compagnon;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -118,6 +120,22 @@ public class List_torrent_adapteur extends BaseAdapter {
         holder.leechers.setText(String.valueOf(listData.get(position).getLeechers())+" Lecheers" );
         holder.seeders.setText(String.valueOf(listData.get(position).getSeeders())+" Seeders");
         holder.taille.setText(listData.get(position).getTailles());
+        holder.url = listData.get(position).getUrl();
+
+        ListView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                android.app.FragmentManager fragmentManager = MainActivity.fragmentManager;
+                View_Torrent_Fragment fragment = new View_Torrent_Fragment().newInstance(holder.url);
+
+
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment).commit();
+            }
+        });
+
         if (finish) return  ListView;
         if (position == getCount() - 1) {
             currentPage++;
@@ -154,6 +172,7 @@ public class List_torrent_adapteur extends BaseAdapter {
         TextView leechers;
         TextView seeders;
         TextView taille;
+        String url;
 
     }
 

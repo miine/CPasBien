@@ -128,6 +128,7 @@ public class Content_List_Fragment extends Fragment  {
         protected void onPostExecute(String result) {
 
             mListView = (ListView)getActivity().findViewById(R.id.myList);
+
             if (!result.equals("")){
             mAdapter = new List_torrent_adapteur(getActivity().getBaseContext(),res,result);
             } else{

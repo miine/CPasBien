@@ -44,12 +44,13 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     public static ProgressBar mprogress;
     private static View appbarmain ;
-    private Content_List_Fragment currentfrag;
+    public static  Content_List_Fragment currentfrag;
 
     //Search bar
     private MenuItem mSearchAction;
     private boolean isSearchOpened = false;
     private EditText edtSeach;
+    public static android.app.FragmentManager fragmentManager;
 
 
     @Override
@@ -135,11 +136,11 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        fragmentManager= getFragmentManager();
         toolbar.setTitle(item.getTitle());
         if (id == R.id.nav_Top_film) {
             List_view_fragment fragment = new List_view_fragment();
-            android.app.FragmentManager fragmentManager = getFragmentManager();
+
 
             fragmentManager.beginTransaction()
                     .replace(R.id.container, fragment).commit();
@@ -148,7 +149,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_Films) {
             Content_List_Fragment fragment = Content_List_Fragment.newInstance("FILMS");
             currentfrag = fragment;
-            android.app.FragmentManager fragmentManager = getFragmentManager();
+
 
             fragmentManager.beginTransaction()
                     .replace(R.id.container, fragment).commit();
@@ -157,7 +158,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_Series) {
             Content_List_Fragment fragment = Content_List_Fragment.newInstance("SERIES");
             currentfrag = fragment;
-            android.app.FragmentManager fragmentManager = getFragmentManager();
+
 
             fragmentManager.beginTransaction()
                     .replace(R.id.container, fragment).commit();
@@ -166,7 +167,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_Musique) {
             Content_List_Fragment fragment = Content_List_Fragment.newInstance("MUSIQUES");
             currentfrag = fragment;
-            android.app.FragmentManager fragmentManager = getFragmentManager();
+
 
             fragmentManager.beginTransaction()
                     .replace(R.id.container, fragment).commit();
@@ -174,7 +175,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_Ebooks) {
             Content_List_Fragment fragment = Content_List_Fragment.newInstance("EBOOKS");
             currentfrag = fragment;
-            android.app.FragmentManager fragmentManager = getFragmentManager();
+
 
             fragmentManager.beginTransaction()
                     .replace(R.id.container, fragment).commit();
@@ -182,7 +183,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_logiciels) {
             Content_List_Fragment fragment = Content_List_Fragment.newInstance("LOGICIELS");
             currentfrag = fragment;
-            android.app.FragmentManager fragmentManager = getFragmentManager();
+
 
             fragmentManager.beginTransaction()
                     .replace(R.id.container, fragment).commit();
@@ -190,7 +191,7 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_Jeux_console) {
             Content_List_Fragment fragment = Content_List_Fragment.newInstance("JEUX_CONSOLES");
             currentfrag = fragment;
-            android.app.FragmentManager fragmentManager = getFragmentManager();
+
 
             fragmentManager.beginTransaction()
                     .replace(R.id.container, fragment).commit();
@@ -198,7 +199,7 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_Jeux_Pc) {
             Content_List_Fragment fragment = Content_List_Fragment.newInstance("JEUX_PC");
             currentfrag = fragment;
-            android.app.FragmentManager fragmentManager = getFragmentManager();
+
 
             fragmentManager.beginTransaction()
                     .replace(R.id.container, fragment).commit();
